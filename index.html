@@ -4,8 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Pixel Art Maker</title>
-    <link rel="stylesheet" src="styles.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- jQuery 3.2.1 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- JavaScript -->
     <script src="design.js"></script>
+
 </head>
 
 <body>
@@ -16,18 +24,20 @@
     </section>
 
     <section class="main">
-        <form class="creat-a-grid">
+        <form id="create-a-grid">
             Grid Height:
-            <input type="text" name="grid-width" id="grid-width" placeholder="20">
-            Grid Width:
-            <input type="text" name="grid-heigth" id="grid-heigth" placeholder="20">  
-            <input type="button" class="button-active" id="submit-button" target="_blank" value="Cute kitten" onclick="window.open('https://static1.squarespace.com/static/54e8ba93e4b07c3f655b452e/t/56c2a04520c64707756f4267/1493764650017/')" />
+            <input type="number" min="1" max="42" name="grid-height" id="grid-height" value="1"> Grid Width:
+            <input type="number" min="1" max="42" name="grid-width" id="grid-width" value="2">
+            <input type="button" value="Generate grid" id="submit-button">
         </form>
-        <div class="pick-a-color">
+        <div id="pick-a-color">
             <p>Pick a color</p>
             <input type="color" id="color">
         </div>
-        <div class="grid"></div>
+        <div id="grid-container">
+            
+        </div>
+        
     </section>
 </body>
 

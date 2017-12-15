@@ -54,3 +54,16 @@ table {
 	border-spacing: 0;
 }
 
+/*
+    ------------------------------------------------
+    ------------------------------------------------
+*/
+table {
+    border: 1px solid black;
+}
+td {
+    border: 1px solid black;
+    width: 60px;
+    height: 60px;
+}
+
