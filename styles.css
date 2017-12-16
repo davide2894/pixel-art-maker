@@ -55,15 +55,119 @@ table {
 }
 
 /*
-    ------------------------------------------------
-    ------------------------------------------------
+    ---------------------------
+    ---------------------------
+            STYLES
+    ---------------------------
+    ---------------------------
 */
+.page-wrapper {
+    border: 1px solid black;
+    -ms-flex-preferred-size: 90%;
+    flex-basis: 90%;
+    heigth: auto;
+    margin: 0 auto;
+    font-family: "Raleway", sans-serif;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+.page-wrapper * {
+    border: 1px solid black;
+    margin-bottom: 2%;
+    margin: 0 auto;
+}
+.header-section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin: 2% 0;
+}
+.title {
+    border: 1px solid black;
+    font-family: 'Monoton', cursive;
+    font-size: 10em;
+    font-weight: 500;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    margin: 0 auto;
+}
+.main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    margin: 2% 0;
+}
+.main * {
+    margin-bottom: 2%;
+}
+.main > #pick-a-color{
+    margin-top: 2%;
+}
+#create-a-grid {
+    border: 1px solid black;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+.fs{
+    border: 1px solid red;
+    font-size: 3em;
+}
+#grid-height,
+#grid-width {
+    border: 1px solid black;
+    font-size: 1em;
+}
+
+#pick-a-color{
+    border: 1px solid black;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    margin: 0 auto;
+    font-size: 3em;
+}
+
+#grid-container {
+    border: 1px solid black;
+    width: 100%;
+    height: auto;
+}
 table {
     border: 1px solid black;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0 auto;
+    padding: 6%;
+    width: 80vw;
+    height: 90vh; 
 }
 td {
     border: 1px solid black;
     width: 60px;
     height: 60px;
 }
-

@@ -5,9 +5,12 @@
     <meta charset="UTF-8">
     <title>Pixel Art Maker</title>
 
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css?family=Monoton|Raleway" rel="stylesheet">
+
     <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
-    
+
     <!-- jQuery 3.2.1 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -17,28 +20,34 @@
 </head>
 
 <body>
-    <section class="header-section">
-        <div class="header">
-            <h1>Pixel Art Maker</h1>
-        </div>
-    </section>
+    <div class="page-wrapper">
 
-    <section class="main">
-        <form id="create-a-grid">
-            Grid Height:
-            <input type="number" min="1" max="42" name="grid-height" id="grid-height" value="1"> Grid Width:
-            <input type="number" min="1" max="42" name="grid-width" id="grid-width" value="2">
-            <input type="button" value="Generate grid" id="submit-button">
-        </form>
-        <div id="pick-a-color">
-            <p>Pick a color</p>
-            <input type="color" id="color">
-        </div>
-        <div id="grid-container">
-            
-        </div>
-        
-    </section>
+        <section class="header-section">
+            <h1 class="title">Pixel Art<br>
+            <h1 class="title">Maker</h1>
+        </section>
+
+        <section class="main">
+            <form id="create-a-grid">
+                <fieldset class="fs">
+                    <span>Grid Height:</span>
+                    <input type="number" min="1" max="42" name="grid-height" id="grid-height" value="1">
+                </fieldset>
+                <fieldset class="fs">
+                    <span>Grid Width:</span>
+                    <input type="number" min="1" max="42" name="grid-width" id="grid-width" value="2">
+                </fieldset>
+                
+                <input type="button" value="Generate grid" id="submit-button">
+            </form>
+            <div id="pick-a-color">
+                <p>Pick a color</p>
+                <input type="color" id="color" value="#000000">
+            </div>
+            <div id="grid-container"></div>
+        </section>
+
+    </div>
 </body>
 
 </html>
