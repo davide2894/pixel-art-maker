@@ -1,15 +1,9 @@
-// execute this code only when the document is loaded 
-$(function(){
-    
-    // generate grid when "submit" button is clicked
-    $("#submit-button").on("click", function makeGrid() {
-        
-        //store grid's height and width values prompted by the user
+//grids's height and width values prompted by the user
         var gridHeight = $("#grid-height").val();
         var gridWidth = $("#grid-width").val();
         
         // create HTML of table element
-        var table = "<table id='table'>";
+        var  table = "<table id='table'>";
 
         // iterate over rows
         for (var r = 0; r < gridHeight; r ++) {
@@ -44,7 +38,6 @@ $(function(){
 
         // fill only clicked cell with selected color
         $(this).css("background-color", color);
-        
         
     });
 });

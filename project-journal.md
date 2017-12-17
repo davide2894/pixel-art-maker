@@ -544,6 +544,42 @@ As you can see, at this state the page is like a construction site, the code mes
 
 There's room for improvement. 
 
+-------------------------------------------------------------
+-------------------------------------------------------------
+                UPDATE
+-------------------------------------------------------------
+-------------------------------------------------------------
+# Day 4
+
+## I need to learn more
+***
+I still have problems with styling. I now understood why Flexbox can't be used as the sole layout tool in CSS. Flexbox is one-dimensional: its optimal use is to set the layout of single div containers - for example the header's inner elements . CSS Grid, on the other hand, is a two-dimensional tool: its optimal use is to style the layout of an entire page.
+
+So as for now my page looks standard compared to the project requirements. Which I don't like much. 
+
+I must learn CSS Grid. 
+
+## Polish JS
+***
+For the moment, the priority is to finish the project in a way that meets the requirements. To do so I lack a few things in JavaScript:
+* if the user clicks "Create a grid button" a second time, the program must do the following:
+    * if the current value of grid width and height are the same, don't do anything
+    * else keep the same generated grid but add a number N of rows and columns based on the user's prompt. To be more precise, I'm thinking that the program should calculate the difference between new inputs value and their previous one: this will be the number N to add respectively to rows and columns
+* add clear button   
+* use `const` and `let` as per the requirements
+* meet guidelines 
+* meet Project Rubric
+
+### Improve Grid button
+
+
+
+
+
+
+
+
+
 ## Links
 ***
 Feel free to chek:
