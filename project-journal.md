@@ -549,7 +549,7 @@ There's room for improvement.
                 UPDATE
 -------------------------------------------------------------
 -------------------------------------------------------------
-# Day 4
+# Day 4 - Sunday 17 December 2017 
 
 ## I need to learn more
 ***
@@ -562,18 +562,80 @@ I must learn CSS Grid.
 ## Polish JS
 ***
 For the moment, the priority is to finish the project in a way that meets the requirements. To do so I lack a few things in JavaScript:
-* if the user clicks "Create a grid button" a second time, the program must do the following:
-    * if the current value of grid width and height are the same, don't do anything
-    * else keep the same generated grid but add a number N of rows and columns based on the user's prompt. To be more precise, I'm thinking that the program should calculate the difference between new inputs value and their previous one: this will be the number N to add respectively to rows and columns
-* add clear button   
-* use `const` and `let` as per the requirements
-* meet guidelines 
-* meet Project Rubric
-
-### Improve Grid button
+1. if the user clicks "Create a grid button" a second time, the program must calculate the difference between new inputs' values and their previous ones to determine how many new rows and columns to add
+2. add reset button   
+3. use `const` and `let` as per the requirements
+4. meet guidelines 
+5. meet Project Rubric
 
 
+-------------------------------------------------------------
+-------------------------------------------------------------
+                UPDATE
+-------------------------------------------------------------
+-------------------------------------------------------------
+# Day 8 - Monday 18 December 2017 
 
+## Improve Grid button
+***
+### 
+> if the current value of grid width and height are the same, don't do anything
+
+    // execute code when document is ready
+    $(function(){
+
+    var clicks = 0;
+    var gridHeight;
+    var gridWidth;
+    var table;
+
+    // fire event when submit button is clicked
+    $("#submit-button").on("click", function(){
+
+        if(table === undefined){
+            //grids's height and width values prompted by the user
+            gridHeight = $("#grid-height").val();
+            gridWidth = $("#grid-width").val();
+
+            // create HTML of table element
+            table = "<table id='table'>";
+
+            // iterate over rows
+            for (var r = 0; r < gridHeight; r ++) {
+
+                // create HTML for rows  
+                table += "<tr class='tr'>";
+
+                // iterate over each cell of current row
+                for (var c = 0; c < gridWidth; c++) {
+
+                    // create HTML for columns
+                    table += ("<td class='td'></td>")
+                }
+                // end of current row
+
+                // close row element
+                table += "</tr>";
+            }
+            // for loop end, here grid is almost done
+
+            // close table element. Now grid's HTML is done
+            table += "</table>";
+
+            // append grid's HTML to its container div
+            $("#grid-container").append(table);   
+
+            $("#submit-button").attr("value", "Reset");
+        }
+        else {
+            $(".td").css("background-color", "");
+        }
+    });
+
+
+Each time the button is clicked, the program checks the existence of the grid:
+* if there isn't any it generates a grid whose size is the result of the user's input
+* in the opposite case (there is already a grid) the button changes value to "Reset". From now on, each time this button is clicked it will empty each cell's background, de facto clearning the grid.
 
 
 

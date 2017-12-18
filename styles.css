@@ -128,19 +128,16 @@ form {
     font-size: 3em;
     width: 400px;
 }
-
 .fs-input {
     font-size: 1em;
 }
-
-.form-button {
+#submit-button {
     width: 120px;
     height: 40px;
     font-size: 1em;
     -ms-flex-item-align:center;
     align-self:center;
 }
-
 #pick-a-color{
     display: -webkit-box;
     display: -ms-flexbox;
@@ -154,7 +151,6 @@ form {
     margin: 0 auto;
     font-size: 3em;
 }
-
 #grid-container {
     width: 100%;
     height: auto;
