@@ -8,11 +8,11 @@ $(function(){
     var table;
     
     // access DOM to select color picker
-    const colorPicker = $("#color").val();
+    var colorPicker = $("#color");
     
-    const gridContainer = $("#grid-container");
+    const GRIDCONTAINER = $("#grid-container");
     
-    const td = $(".td");
+    const TD = $(".td");
     
     function fillGrid(target){
         if(table !== undefined){
@@ -22,8 +22,11 @@ $(function(){
     
     // define function to color a cell
     function color(target){    
+        //get current color 
+        let color = colorPicker.val();
+        
         // fill only clicked cell with selected color
-        $(target).css("background-color", colorPicker);
+        $(target).css("background-color", color);
     }
     
     function clearCell(target){
@@ -78,17 +81,17 @@ $(function(){
 
     // fill clicked cell with color picked by user
     // trigger function when user clicks on any cell
-    gridContainer.on("click", ".td", function(e){
+    GRIDCONTAINER.on("click", ".td", function(e){
         color(this);
     });
     
     // clear cell on double click
-    gridContainer.on("dblclick", ".td", function(){
+    GRIDCONTAINER.on("dblclick", ".td", function(){
         clearCell(this);
     });    
     
     // clear multiple cells on right+shift
-    gridContainer.on("mouseenter", ".td", function(e){
+    GRIDCONTAINER.on("mouseenter", ".td", function(e){
         if(e.shiftKey){
             $(this).css("cursor", "url(assets/cursor/eraser.cur)");
             clearCell(this);    
