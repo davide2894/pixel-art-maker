@@ -14,6 +14,7 @@ $(function(){
     
     const TD = $(".td");
     
+    // TO-DO: create feature to fill grid with one click
     function fillGrid(target){
         if(table !== undefined){
            color(target);
@@ -33,9 +34,11 @@ $(function(){
         $(target).css("background-color", "");
     }
     
-    // fire event when submit button is clicked
-    $("#submit-button").on("click", function(){
+    // fire event when form is submitted
+    $("form").submit(function makeGrid(e){
 
+        e.preventDefault();
+        
         if(table === undefined){
             //grids's height and width values prompted by the user
             gridHeight = $("#grid-height").val();
@@ -75,7 +78,7 @@ $(function(){
         else {
             
             // when reset is clicked, empty cell
-            $(".td").css("background-color", "");
+            $(".td").cssw("background-color", "");
         }
     });
 
