@@ -574,7 +574,7 @@ For the moment, the priority is to finish the project in a way that meets the re
                 UPDATE
 -------------------------------------------------------------
 -------------------------------------------------------------
-# Day 8 - Monday 18 December 2017 
+# Day 5 - Monday 18 December 2017 
 
 ## Improve Grid button
 ***
@@ -637,6 +637,15 @@ Each time the button is clicked, the program checks the existence of the grid:
 * if there isn't any it generates a grid whose size is the result of the user's input
 * in the opposite case (there is already a grid) the button changes value to "Reset". From now on, each time this button is clicked it will empty each cell's background, de facto clearning the grid.
 
+-------------------------------------------------------------
+-------------------------------------------------------------
+                UPDATE
+-------------------------------------------------------------
+-------------------------------------------------------------
+# Day 6 - Tuesday 17 December 2017 
+
+## Color cell when mouse is over it
+Many other students added this feature to their project. I find it necessary. though not asked by the requirements.
 
 
 

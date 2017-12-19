@@ -1,10 +1,34 @@
 // execute code when document is ready
 $(function(){
     
+    // declar global variables
     var clicks = 0;
     var gridHeight;
     var gridWidth;
     var table;
+    
+    // access DOM to select color picker
+    const colorPicker = $("#color").val();
+    
+    const gridContainer = $("#grid-container");
+    
+    const td = $(".td");
+    
+    function fillGrid(target){
+        if(table !== undefined){
+           color(target);
+        }
+    }
+    
+    // define function to color a cell
+    function color(target){    
+        // fill only clicked cell with selected color
+        $(target).css("background-color", colorPicker);
+    }
+    
+    function clearCell(target){
+        $(target).css("background-color", "");
+    }
     
     // fire event when submit button is clicked
     $("#submit-button").on("click", function(){
@@ -18,13 +42,13 @@ $(function(){
             table = "<table id='table'>";
 
             // iterate over rows
-            for (var r = 0; r < gridHeight; r ++) {
+            for (let r = 0; r < gridHeight; r ++) {
 
                 // create HTML for rows  
                 table += "<tr class='tr'>";
 
                 // iterate over each cell of current row
-                for (var c = 0; c < gridWidth; c++) {
+                for (let c = 0; c < gridWidth; c++) {
 
                     // create HTML for columns
                     table += ("<td class='td'></td>")
@@ -42,27 +66,39 @@ $(function(){
             // append grid's HTML to its container div
             $("#grid-container").append(table);   
             
+            // change button value to "Reset"
             $("#submit-button").attr("value", "Reset");
         }
         else {
+            
+            // when reset is clicked, empty cell
             $(".td").css("background-color", "");
         }
     });
 
     // fill clicked cell with color picked by user
     // trigger function when user clicks on any cell
-    $("#grid-container").on("click", ".td", function colorCell() {
-
-        //select picked color and store it
-        var color = $("#color").val();
-
-        // fill only clicked cell with selected color
-        $(this).css("background-color", color);
-        
+    gridContainer.on("click", ".td", function(e){
+        color(this);
     });
-        
-    $("#grid-container").mousedown(".td", function(){
-        $(ths).mousemove(function(){};
+    
+    // clear cell on double click
+    gridContainer.on("dblclick", ".td", function(){
+        clearCell(this);
+    });    
+    
+    // clear multiple cells on right+shift
+    gridContainer.on("mouseenter", ".td", function(e){
+        if(e.shiftKey){
+            $(this).css("cursor", "url(assets/cursor/eraser.cur)");
+            clearCell(this);    
+        }
+        else if(e.buttons == 1){
+            color(this);
+        }
+    });
+    
+    
 });
 
 
