@@ -54,13 +54,7 @@ table {
 	border-spacing: 0;
 }
 
-/*
-    ---------------------------
-    ---------------------------
-            STYLES
-    ---------------------------
-    ---------------------------
-*/
+/* Page wrapper */
 .page-wrapper {
     -ms-flex-preferred-size: 90%;
     flex-basis: 90%;
@@ -74,11 +68,14 @@ table {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
+    background: url(assets/disco.jpg) center center/cover no-repeat;
 }
 .page-wrapper * {
     margin-bottom: 2%;
     margin: 0 auto;
 }
+
+/* Header */
 .header-section {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -91,13 +88,23 @@ table {
 }
 .title {
     font-family: 'Monoton', cursive;
-    font-size: 7.8em;
+    font-size: 4em;
     font-weight: 500;
     -webkit-box-flex: 1;
     -ms-flex: 1;
     flex: 1;
     margin: 0 auto;
+    color: #F7CA18;
 }
+
+
+/* 
+---------------------------------------------
+---------------------------------------------
+            MAIN SECTION
+---------------------------------------------
+---------------------------------------------
+*/
 .main {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -109,6 +116,7 @@ table {
     -ms-flex-pack: distribute;
     justify-content: space-around;
     margin: 2% 0;
+    color: pink;
 }
 .main * {
     margin-bottom: 2%;
@@ -116,29 +124,32 @@ table {
 .main > #pick-a-color{
     margin-top: 2%;
 }
-form {
+
+/* Grid form */
+.form {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
 }
 .fs{
-    font-size: 3em;
-    width: 400px;
+    font-size: 2em;
+    width: 80%;
 }
 .fs-input {
     font-size: 1em;
 }
-#submit-button {
+.form-submit-button {
     width: 120px;
     height: 40px;
     font-size: 1em;
-    -ms-flex-item-align:center;
+    -ms-flex-item-align: center;
     align-self:center;
 }
-#pick-a-color{
+
+/* Color picker */
+.color-picker{
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -148,19 +159,33 @@ form {
     flex-direction: column;
     -ms-flex-pack: distribute;
     justify-content: space-around;
-    margin: 0 auto;
-    font-size: 3em;
+    margin: 0 auto 5% auto;
+    font-size: 2em;
 }
-#grid-container {
+
+/* Instructions */
+.instruction-container {
+    font-size: 1.16em;
+}
+.instruction-list{
+    list-style: inside;
+}
+.instruction-span{
+    font-weight: bold;
+}
+
+/* Grid */
+.container {
     width: 100%;
     height: auto;
 }
-table {
+.table {
+    width: auto;
     margin: 0 auto;
 }
-td {
+.td {
     border: 1px solid black;
+    background: pink;
     width: 25px;
     height: 25px;
 }
-

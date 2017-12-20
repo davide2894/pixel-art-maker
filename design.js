@@ -1,6 +1,9 @@
 // execute code when document is ready
 $(function(){
     
+    const gridContainer = $("#grid-container");
+    const TD = $(".td");
+    
     // declar global variables
     var clicks = 0;
     var gridHeight;
@@ -10,98 +13,106 @@ $(function(){
     // access DOM to select color picker
     var colorPicker = $("#color");
     
-    const GRIDCONTAINER = $("#grid-container");
-    
-    const TD = $(".td");
-    
-    // TO-DO: create feature to fill grid with one click
-    function fillGrid(target){
-        if(table !== undefined){
-           color(target);
-        }
-    }
-    
-    // define function to color a cell
-    function color(target){    
-        //get current color 
+    /**
+    * @description adds background color to target element
+    * @param {string} target element
+    */
+    function color(target){  
+        
         let color = colorPicker.val();
         
-        // fill only clicked cell with selected color
         $(target).css("background-color", color);
+        
     }
     
+    /**
+    * @description removes background color from target element
+    * @param {string} target element
+    */
     function clearCell(target){
         $(target).css("background-color", "");
     }
     
-    // fire event when form is submitted
+    // fires event when form is submitted
     $("form").submit(function makeGrid(e){
 
         e.preventDefault();
         
         if(table === undefined){
-            //grids's height and width values prompted by the user
+            //store grids's height and width values prompted by the user
             gridHeight = $("#grid-height").val();
+            
             gridWidth = $("#grid-width").val();
 
-            // create HTML of table element
-            table = "<table id='table'>";
+            // creates HTML of table element
+            table = "<table class='table' id='table'>";
 
-            // iterate over rows
+            // iterates over rows
             for (let r = 0; r < gridHeight; r ++) {
 
-                // create HTML for rows  
+                // creates HTML for rows  
                 table += "<tr class='tr'>";
 
-                // iterate over each cell of current row
+                // iterates over each cell of current row
                 for (let c = 0; c < gridWidth; c++) {
 
-                    // create HTML for columns
+                    // creates HTML for columns
                     table += ("<td class='td'></td>")
                 }
                 // end of current row
 
-                // close row element
+                // closes row element
                 table += "</tr>";
             }
             // for loop end, here grid is almost done
 
-            // close table element. Now grid's HTML is done
+            // closes table element. Now grid's HTML is done
             table += "</table>";
 
-            // append grid's HTML to its container div
+            // appends grid's HTML to its container div
             $("#grid-container").append(table);   
             
-            // change button value to "Reset"
+            // changes button value to "Reset"
             $("#submit-button").attr("value", "Reset");
-        }
-        else {
             
-            // when reset is clicked, empty cell
-            $(".td").cssw("background-color", "");
+        } else {
+            
+            // when reset is clicked, removes color from cell
+            $(".td").css("background-color", "");
         }
     });
 
-    // fill clicked cell with color picked by user
-    // trigger function when user clicks on any cell
-    GRIDCONTAINER.on("click", ".td", function(e){
+    // fills clicked cell with color picked by user
+    // triggers function when user clicks on any cell
+    gridContainer.on("mousedown", ".td", function(e){
+        
         color(this);
+        
     });
     
-    // clear cell on double click
-    GRIDCONTAINER.on("dblclick", ".td", function(){
+    // clears cell on double click
+    gridContainer.on("dblclick", ".td", function(){
+        
         clearCell(this);
+        
     });    
     
-    // clear multiple cells on right+shift
-    GRIDCONTAINER.on("mouseenter", ".td", function(e){
+    // on hover + shift clears multiple cells
+    // on hover + mouse left button colors multiple cells   
+    gridContainer.on("mouseover", ".td", function(e){
+        
         if(e.shiftKey){
+        
             $(this).css("cursor", "url(assets/cursor/eraser.cur)");
+            
             clearCell(this);    
-        }
-        else if(e.buttons == 1){
+            
+        } else if(e.buttons == 1){
+        
             color(this);
+        
         }
+        
     });
     
     

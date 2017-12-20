@@ -21,14 +21,16 @@
 
 <body>
     <div class="page-wrapper">
-
         <section class="header-section">
             <h1 class="title">Pixel Art<br>
             <h1 class="title">Maker</h1>
+            <audio class="audio" autoplay>
+                <source src="funk.ogg" type="audio/ogg"/>
+            </audio>
         </section>
 
         <section class="main">
-            <form id="create-a-grid">
+            <form class="form" id="create-a-grid">
                 <fieldset class="fs">
                     <span class="fs-span">Grid Height:</span>
                     <input class="fs-input" type="number" min="1" max="42" name="grid-height" id="grid-height" value="20">
@@ -37,14 +39,24 @@
                     <span class="fs-span">Grid Width:</span>
                     <input class="fs-input" type="number" min="1" max="42" name="grid-width" id="grid-width" value="20">
                 </fieldset>
-                
-                <input id="submit-button" type="submit" value="Make grid">
+
+                <input class="form-submit-button" id="submit-button" type="submit" value="Make grid">
             </form>
-            <div id="pick-a-color">
+            <div class="color-picker" id="pick-a-color">
                 <p>Pick a color</p>
-                <input type="color" id="color" value="#000000">
+                <input type="color" id="color" value="#462b71">
             </div>
-            <div id="grid-container"></div>
+            <div class="instruction-container">
+                <span class="instruction-span">Instructions:</span>
+                <ul class="instruction-list">
+                    <li class="instruction-item">click on a pixel to color it</li>
+                    <li class="instruction-item">double click it to clear it</li>
+                    <li class="instruction-item">hold mouse right button and drag it o color multiple pixels</li>
+                    <li class="instruction-item">hold shift key and drag mouse to clear multiple pixrls </li>
+                    <li class="instruction-item">click on Reset button to clear the entire grid</li>
+                </ul>
+            </div>
+            <div class="container" id="grid-container"></div>
         </section>
 
     </div>
