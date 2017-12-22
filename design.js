@@ -2,6 +2,7 @@
 $(function(){
     
     const gridContainer = $("#grid-container");
+    const submitButton = $("#submit-button");
     const TD = $(".td");
     
     // declar global variables
@@ -36,6 +37,7 @@ $(function(){
     // fires event when form is submitted
     $("form").submit(function makeGrid(e){
 
+        // prevent form default value to make grid creation possible 
         e.preventDefault();
         
         if(table === undefined){
@@ -65,26 +67,33 @@ $(function(){
                 table += "</tr>";
             }
             // for loop end, here grid is almost done
-
+            
             // closes table element. Now grid's HTML is done
             table += "</table>";
 
             // appends grid's HTML to its container div
-            $("#grid-container").append(table);   
+            gridContainer.append(table);   
             
             // changes button value to "Reset"
-            $("#submit-button").attr("value", "Reset");
+            submitButton.attr("value", "Reset");
             
         } else {
             
-            // when reset is clicked, removes color from cell
-            $(".td").css("background-color", "");
+            // deletes table element
+            $("#table").remove(); 
+            
+            // resets table variable
+            table = undefined;
+            
+            // resets submit button
+            submitButton.attr("value", "Make grid")
         }
+        
     });
 
     // fills clicked cell with color picked by user
     // triggers function when user clicks on any cell
-    gridContainer.on("mousedown", ".td", function(e){
+    gridContainer.on("mousedown", ".td", function(){
         
         color(this);
         
@@ -102,9 +111,7 @@ $(function(){
     gridContainer.on("mouseover", ".td", function(e){
         
         if(e.shiftKey){
-        
-            $(this).css("cursor", "url(assets/cursor/eraser.cur)");
-            
+                    
             clearCell(this);    
             
         } else if(e.buttons == 1){
