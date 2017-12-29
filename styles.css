@@ -68,7 +68,8 @@ table {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    background: url(assets/disco.jpg) center center/cover no-repeat;
+    background: url(assets/disco.jpg) no-repeat center center fixed;
+    background-size: cover;
 }
 .page-wrapper * {
     margin-bottom: 2%;
@@ -84,7 +85,7 @@ table {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    margin: 2% 0;
+    margin: 1% 0;
 }
 .title {
     font-family: 'Monoton', cursive;
@@ -132,10 +133,15 @@ table {
     display: flex;
     -ms-flex-pack: distribute;
     justify-content: space-around;
+    margin-bottom: 0.2%;
 }
 .fs{
     font-size: 2em;
     width: 80%;
+    background: #2e0067;
+    border-radius: 6px;
+    padding: 0.2em;
+    opacity: 0.8;
 }
 .fs-input {
     font-size: 1em;
@@ -159,20 +165,37 @@ table {
     flex-direction: column;
     -ms-flex-pack: distribute;
     justify-content: space-around;
-    margin: 0 auto 5% auto;
+    margin: 0 auto 2% auto;
     font-size: 2em;
 }
 
 /* Instructions */
 .instruction-container {
-    font-size: 1.16em;
-}
-.instruction-list{
-    list-style: inside;
+    background: #2e0067;
+    opacity: 0.8;
+    font-size: 1.19em;
+    color: pink;
+    line-height: 1.2;
+    font-weight: 800;
+    border-radius: 6px;
+    padding: 0.4em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
 }
 .instruction-span{
     font-weight: bold;
 }
+.instruction-list{
+    list-style: inside;
+}
+
 
 /* Grid */
 .container {
